@@ -30,7 +30,7 @@ pipeline{
         }
         stage('Create EKS Deployment & Service'){
             steps{
-                sh 'microk8s kubectl apply -f deployment.yml'
+                sh 'microk8s kubectl apply -f deployment.yml --kubeconfig=/home/ritik/.kube/config'
             }
         }
     }
