@@ -1,0 +1,20 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: EKS-cluster
+  region: ap-south-1
+
+nodeGroups:
+  - name: ng-1
+    instanceType: t2.micro
+    desiredCapacity: 3
+    ssh:
+      publicKeyName: TestKeyMumbai
+
+# eksctl scale nodegroup --cluster EKS-cluster --nodes 3 --nodes-max 4 --nodes-min 1 --name ng-1 --profile default --region ap-south-1
+# eksctl scale nodegroup --cluster EKS-cluster --nodes 4 --nodes-max 5 --nodes-min 2--name ng-1 --profile default --region ap-south-1
+# kubectl get nodes --kubeconfig=/home/ritik/.kube/config
+# eksctl create nodegroup --config-file create_cluster.yaml --include='ng-1'
+# sudo usermod -a -G microk8s jenkins
+# sudo chown -f -R jenkins ~/.kube
