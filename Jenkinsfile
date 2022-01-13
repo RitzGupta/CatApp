@@ -30,7 +30,7 @@ pipeline{
         }
         stage('Create EKS Deployment & Service'){
             steps{
-                sh 'echo "Hello" '
+                sh 'microk8s kubectl apply -f deployment.yml'
             }
         }
     }
