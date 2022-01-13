@@ -19,7 +19,7 @@ pipeline{
         stage('Push Docker Image to ECR'){
             steps{
                 // Loging to ECR
-                sh 'aws ecr get-login-password --region ap-south-1 | docker login --username RitikGupta --password-stdin 671394177905.dkr.ecr.ap-south-1.amazonaws.com'
+                sh 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 671394177905.dkr.ecr.ap-south-1.amazonaws.com'
                 // Tag Image
                 sh 'docker tag catapp:latest 671394177905.dkr.ecr.ap-south-1.amazonaws.com/catapp:latest'
                 // Push Image
